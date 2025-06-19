@@ -3,11 +3,13 @@ import Admin from "./pages/Admin";
 import Employee from "./pages/Employee";
 import Errorpage from "./pages/Errorpage";
 import Login from "./pages/Login";
+import Navbar from "./components/Navbar";
 
 
-function app(){
+function App(){
   return(
     <>
+    <Navbar/>
     <Routes>
        <Route path="/login" element={<Login/>}/>
         <Route path="/employee" element={<Employee/>}/>
@@ -17,4 +19,4 @@ function app(){
     </>
   )
 }
-export default app
+export default App

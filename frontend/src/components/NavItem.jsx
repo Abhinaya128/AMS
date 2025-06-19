@@ -6,10 +6,10 @@ const NavItem = ({ icon, text, submenu, onClick }) => {
     // Handles click events on the navigation item
     const handleClick = () => {
         if (submenu) {
-            setIsOpen(!isOpen); // Toggle submenu visibility if it exists
+            setIsOpen(!isOpen); 
         }
         if (onClick) {
-            onClick(); // Call the passed onClick handler for navigation
+            onClick(); /
         }
     };
 
@@ -32,7 +32,7 @@ const NavItem = ({ icon, text, submenu, onClick }) => {
                     {submenu.map((item, index) => (
                         <li key={index}>
                             <a href="#" className="block text-gray-600 hover:text-blue-500 py-1 transition duration-150 ease-in-out">
-                                {item} {/* Submenu item */}
+                                {item} 
                             </a>
                         </li>
                     ))}

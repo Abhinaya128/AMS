@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 const Navbar = ({ userRole, setUserRole }) => {
     return (
         <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-4 shadow-lg">

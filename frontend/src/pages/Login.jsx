@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
+//import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
+import { loginUser } from '../store/features/authThunk';
+import { useDispatch } from 'react-redux';
 
 const Login = () => {
     const [credentials, setCredentials] = useState({
@@ -9,23 +12,13 @@ const Login = () => {
     })
     const [error, setError] = useState('')
     const navigate = useNavigate()
+    const dispatch=useDispatch()
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        if(credentials.role=="admin"){
-            //adimin login api
-             axios.post("http://localhost:8000/api/auth/admin/login")
-              .then((data)=>console.log(data))
-              .catch((error)=>console.log(error) )
-              
-        }else{
-            //emp login api
-             axios.post("http://localhost:8000/api/auth//login")
-              .then((data)=>console.log(data))
-              .catch((error)=>console.log(error) )
-              
-        }
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(loginUser(credentials))
+};
+
 
     const handleInputChange = (e) => {
         setCredentials({
